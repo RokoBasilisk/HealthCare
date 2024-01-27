@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "ealpYOUyCDaFUCmMkwqs3A1+sqdJYPvMyKZ0cUcd0N4LnHmSxG/ZuRQ08vpmW6VBiiBWWtmx/9QTum5+6qvqjg==",
+  "success": true,
+  "projectFilePath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.API\\Auth.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ASUS VivoBook\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\ASUS VivoBook\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\ASUS VivoBook\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\ASUS VivoBook\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\ASUS VivoBook\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\ASUS VivoBook\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
