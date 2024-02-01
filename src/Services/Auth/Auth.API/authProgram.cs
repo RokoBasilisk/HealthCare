@@ -1,13 +1,17 @@
 using Auth.API.Extensions;
+using Auth.Application;
 using Auth.Infrastructure;
+using Core.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services
+    .ConfigureAppSettings()
     .AddInfrastructure()
-    .AddWriteDbContext();
+    .AddWriteDbContext()
+    .AddCommandHandler();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

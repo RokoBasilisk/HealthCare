@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <Folder Include="Exceptions\" />
-    <Folder Include="Behaviors\" />
     <Folder Include="Mapper\" />
   </ItemGroup>
 

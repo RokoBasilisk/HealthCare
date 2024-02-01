@@ -14,12 +14,14 @@ namespace Auth.API.Controllers
     [ApiController]
     public class RoleController(IMediator mediator) : ControllerBase
     {
-        [HttpGet]
+        private readonly IMediator _mediator = mediator;
+
+        [HttpPost]
         [Consumes(MediaTypeNames.Application.Json)]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(ApiResponse<CreateRoleResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Create([FromBody][Required] CreateRoleCommand command)
-            => (await mediator.Send(command)).ToActionResult();
+            => (await _mediator.Send(command)).ToActionResult();
     }
 }
