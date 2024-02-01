@@ -1,4 +1,5 @@
-﻿using Auth.Domain.Common;
+﻿using Auth.Domain.Entities.RoleAggregate;
+using Core.SharedKernel;
 using System;
 using System.Collections.Generic;
 using System.Linq;

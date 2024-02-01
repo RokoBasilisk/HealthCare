@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj": {}
+    "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj": {}
   },
   "projects": {
-    "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj": {
+    "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
-        "projectName": "Auth.Domain",
-        "projectPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
-        "packagesPath": "C:\\Users\\ASUS VivoBook\\.nuget\\packages\\",
-        "outputPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Domain\\obj\\",
+        "projectUniqueName": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\Core.csproj",
+        "projectName": "Core",
+        "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\Nghia\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ASUS VivoBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,6 +32,87 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
+        "projectName": "Auth.Domain",
+        "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
+        "packagesPath": "C:\\Users\\Nghia\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Nghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\Core.csproj": {
+                "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\Core.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -8,7 +8,5 @@ namespace Auth.Application.Wrappers.Abstracts
 {
     public interface IResponse
     {
-        bool Success { get; }
-        int StatusCode { get; }
     }
 }

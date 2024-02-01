@@ -1,4 +1,4 @@
-﻿using Auth.Domain.Common;
+﻿using Core.SharedKernel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
