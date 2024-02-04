@@ -553,19 +553,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ASUS VivoBook\\.nuget\\packages\\": {}
+    "C:\\Users\\Nghia\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
+      "projectUniqueName": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
       "projectName": "Auth.Domain",
-      "projectPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
-      "packagesPath": "C:\\Users\\ASUS VivoBook\\.nuget\\packages\\",
-      "outputPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Domain\\obj\\",
+      "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
+      "packagesPath": "C:\\Users\\Nghia\\.nuget\\packages\\",
+      "outputPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Domain\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ASUS VivoBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -579,8 +584,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Core\\Core.csproj": {
-              "projectPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Core\\Core.csproj"
+            "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\Core.csproj": {
+              "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\Core.csproj"
             }
           }
         }

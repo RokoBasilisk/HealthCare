@@ -535,19 +535,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ASUS VivoBook\\.nuget\\packages\\": {}
+    "C:\\Users\\Nghia\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Core\\Core.csproj",
+      "projectUniqueName": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Core\\Core.csproj",
-      "packagesPath": "C:\\Users\\ASUS VivoBook\\.nuget\\packages\\",
-      "outputPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Core\\obj\\",
+      "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\Core.csproj",
+      "packagesPath": "C:\\Users\\Nghia\\.nuget\\packages\\",
+      "outputPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ASUS VivoBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

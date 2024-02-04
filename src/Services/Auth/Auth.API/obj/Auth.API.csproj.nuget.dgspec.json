@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.API\\Auth.API.csproj": {}
+    "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.API\\Auth.API.csproj": {}
   },
   "projects": {
-    "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Core\\Core.csproj": {
+    "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Core\\Core.csproj",
+        "projectUniqueName": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\ASUS VivoBook\\.nuget\\packages\\",
-        "outputPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Core\\obj\\",
+        "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\Nghia\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ASUS VivoBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,17 +93,21 @@
         }
       }
     },
-    "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.API\\Auth.API.csproj": {
+    "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.API\\Auth.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.API\\Auth.API.csproj",
+        "projectUniqueName": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.API\\Auth.API.csproj",
         "projectName": "Auth.API",
-        "projectPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.API\\Auth.API.csproj",
-        "packagesPath": "C:\\Users\\ASUS VivoBook\\.nuget\\packages\\",
-        "outputPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.API\\obj\\",
+        "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.API\\Auth.API.csproj",
+        "packagesPath": "C:\\Users\\Nghia\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ASUS VivoBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -113,11 +121,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Application\\Auth.Application.csproj": {
-                "projectPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Application\\Auth.Application.csproj"
+              "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Application\\Auth.Application.csproj": {
+                "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Application\\Auth.Application.csproj"
               },
-              "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Infrastructure\\Auth.Infrastructure.csproj": {
-                "projectPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Infrastructure\\Auth.Infrastructure.csproj"
+              "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Infrastructure\\Auth.Infrastructure.csproj": {
+                "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Infrastructure\\Auth.Infrastructure.csproj"
               }
             }
           }
@@ -174,17 +182,21 @@
         }
       }
     },
-    "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Application\\Auth.Application.csproj": {
+    "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Application\\Auth.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Application\\Auth.Application.csproj",
+        "projectUniqueName": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Application\\Auth.Application.csproj",
         "projectName": "Auth.Application",
-        "projectPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Application\\Auth.Application.csproj",
-        "packagesPath": "C:\\Users\\ASUS VivoBook\\.nuget\\packages\\",
-        "outputPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Application\\obj\\",
+        "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Application\\Auth.Application.csproj",
+        "packagesPath": "C:\\Users\\Nghia\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ASUS VivoBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -198,11 +210,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Core\\Core.csproj": {
-                "projectPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Core\\Core.csproj"
+              "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\Core.csproj": {
+                "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\Core.csproj"
               },
-              "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj": {
-                "projectPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj"
+              "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj": {
+                "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj"
               }
             }
           }
@@ -266,17 +278,21 @@
         }
       }
     },
-    "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj": {
+    "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
+        "projectUniqueName": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
         "projectName": "Auth.Domain",
-        "projectPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
-        "packagesPath": "C:\\Users\\ASUS VivoBook\\.nuget\\packages\\",
-        "outputPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Domain\\obj\\",
+        "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
+        "packagesPath": "C:\\Users\\Nghia\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ASUS VivoBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -290,8 +306,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Core\\Core.csproj": {
-                "projectPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Core\\Core.csproj"
+              "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\Core.csproj": {
+                "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Core\\Core.csproj"
               }
             }
           }
@@ -325,17 +341,21 @@
         }
       }
     },
-    "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Infrastructure\\Auth.Infrastructure.csproj": {
+    "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Infrastructure\\Auth.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Infrastructure\\Auth.Infrastructure.csproj",
+        "projectUniqueName": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Infrastructure\\Auth.Infrastructure.csproj",
         "projectName": "Auth.Infrastructure",
-        "projectPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Infrastructure\\Auth.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\ASUS VivoBook\\.nuget\\packages\\",
-        "outputPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Infrastructure\\obj\\",
+        "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Infrastructure\\Auth.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Nghia\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ASUS VivoBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -349,8 +369,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Application\\Auth.Application.csproj": {
-                "projectPath": "D:\\SOUCE_CODE\\ASP\\HealthCare\\src\\Services\\Auth\\Auth.Application\\Auth.Application.csproj"
+              "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Application\\Auth.Application.csproj": {
+                "projectPath": "D:\\Code\\.NET\\HealthcareMicroservices\\src\\Services\\Auth\\Auth.Application\\Auth.Application.csproj"
               }
             }
           }

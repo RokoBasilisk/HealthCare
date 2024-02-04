@@ -1,7 +1,9 @@
 using Auth.API.Extensions;
+using Auth.API.Middlewares;
 using Auth.Application;
 using Auth.Infrastructure;
 using Core.Extensions;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +28,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseErrorHandling();
 
 app.UseHttpsRedirection();
 

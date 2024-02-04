@@ -249,3 +249,4 @@ D:\SOUCE_CODE\ASP\HealthCare\src\Services\Auth\Auth.API\obj\Debug\net8.0\refint\
 D:\SOUCE_CODE\ASP\HealthCare\src\Services\Auth\Auth.API\obj\Debug\net8.0\Auth.API.pdb
 D:\SOUCE_CODE\ASP\HealthCare\src\Services\Auth\Auth.API\obj\Debug\net8.0\Auth.API.genruntimeconfig.cache
 D:\SOUCE_CODE\ASP\HealthCare\src\Services\Auth\Auth.API\obj\Debug\net8.0\ref\Auth.API.dll
+D:\Code\.NET\HealthcareMicroservices\src\Services\Auth\Auth.API\obj\Debug\net8.0\Auth.API.MvcApplicationPartsAssemblyInfo.cs
