@@ -8,18 +8,18 @@ namespace Auth.Infrastructure.Persistence
     public abstract class BaseDBContext<TContext> : DbContext
         where TContext : DbContext
     {
-        private const string Collation = "Latin1_General_CI_AI";
+        private const string Collation = "en-LC";
 
         public BaseDBContext(DbContextOptions options) : base(options)
         {
-
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
             modelBuilder
-                .UseCollation(Collation)
+                //.UseCollation(Collation)
                 .RemoveCascadeDeleteConvension();
             base.OnModelCreating(modelBuilder);
         }

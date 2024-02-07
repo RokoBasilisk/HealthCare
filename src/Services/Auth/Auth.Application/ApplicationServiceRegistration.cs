@@ -15,6 +15,7 @@ namespace Auth.Application
             services
                 .AddMediatR(cfg => cfg
                     .AddBehavior(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>))
+                    .AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>))
                     .RegisterServicesFromAssembly(ThisAssembly))
                 .AddValidatorsFromAssembly(ThisAssembly);
     }

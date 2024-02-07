@@ -22,11 +22,12 @@ namespace Auth.API.Extensions
             var logger = serviceProvider.GetRequiredService<ILogger<TContext>>();
             var connectionOptions = serviceProvider.GetOptions<ConnectionOptions>();
 
-            optionsBuilder.UseNpgsql(connectionOptions.PostgreSqlConnection, options =>
-                options
-                    .MigrationsAssembly(MigrationsAssembly)
-                    .EnableRetryOnFailure(3)
-                    .CommandTimeout(60))
+            optionsBuilder
+                .UseNpgsql(connectionOptions.PostgreSqlConnection, options =>
+                    options
+                        .MigrationsAssembly(MigrationsAssembly)
+                        .EnableRetryOnFailure(3)
+                        .CommandTimeout(60))
                 .UseQueryTrackingBehavior(queryTrackingBehavior);
         }
     }

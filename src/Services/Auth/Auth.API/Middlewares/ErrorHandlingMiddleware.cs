@@ -1,11 +1,5 @@
-﻿using Ardalis.Result;
-using Auth.API.Extensions;
-using Auth.API.Models.Responses;
-using Auth.Application.Exceptions;
-using Auth.Application.Features.Roles.Commands;
+﻿using Auth.API.Models.Responses;
 using Core.Extensions;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using System.Net.Mime;
 
 namespace Auth.API.Middlewares

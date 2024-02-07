@@ -1,12 +1,7 @@
 ﻿using Auth.Infrastructure.Persistence;
 using Core.SharedKernel;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Transactions;
 
 namespace Auth.Infrastructure.Services
 {
@@ -14,36 +9,43 @@ namespace Auth.Infrastructure.Services
     {
         public async Task SaveChangesAsync()
         {
-            await using var transaction = await writeDbContext.Database.BeginTransactionAsync();
+            // Creating the execution strategy (Connection resiliency and database retries).
+            var strategy = writeDbContext.Database.CreateExecutionStrategy();
 
-            logger.LogInformation("----- Begin transaction: '{TransactionId}'", transaction.TransactionId);
-
-            try
+            // Execute the strategy
+            await strategy.ExecuteAsync(async () =>
             {
-                var rowsAffected = await writeDbContext.SaveChangesAsync();
+                await using var transaction = await writeDbContext.Database.BeginTransactionAsync();
 
-                logger.LogInformation("----- Commit transaction: '{TransactionId}'", transaction.TransactionId);
+                logger.LogInformation("----- Begin transaction: '{TransactionId}'", transaction.TransactionId);
 
-                await transaction.CommitAsync();
+                try
+                {
+                    var rowsAffected = await writeDbContext.SaveChangesAsync();
 
-                logger.LogInformation(
-                    "----- Transaction successfully confirmed: '{TransactionId}', Rows affected: {RowsAffected}",
-                    transaction.TransactionId,
-                    rowsAffected);
-            }
-            catch (Exception ex)
-            {
-                logger.LogError(
-                    ex,
-                    "An unexpected exception occured while committing the transaction: '{TransactionId}', message: '{message}'",
-                    transaction.TransactionId,
-                    ex.Message);
-                
-                // Roll back data
-                await transaction.RollbackAsync();
+                    logger.LogInformation("----- Commit transaction: '{TransactionId}'", transaction.TransactionId);
 
-                throw;
-            }
+                    await transaction.CommitAsync();
+
+                    logger.LogInformation(
+                        "----- Transaction successfully confirmed: '{TransactionId}', Rows affected: {RowsAffected}",
+                        transaction.TransactionId,
+                        rowsAffected);
+                }
+                catch (Exception ex)
+                {
+                    logger.LogError(
+                        ex,
+                        "An unexpected exception occured while committing the transaction: '{TransactionId}', message: '{message}'",
+                        transaction.TransactionId,
+                        ex.Message);
+
+                    // Roll back data
+                    await transaction.RollbackAsync();
+
+                    throw;
+                }
+            });
         }
     }
 }

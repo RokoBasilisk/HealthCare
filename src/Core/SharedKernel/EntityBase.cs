@@ -8,9 +8,9 @@ namespace Core.SharedKernel
 
         public DateTime CreatedDate { get; set; }
 
-        public string LastModifiedBy { get; set; }
+        public string? LastModifiedBy { get; set; } = null;
 
-        public DateTime? LastModifiedDate { get; set; }
+        public DateTime? LastModifiedDate { get; set; } = null;
 
         public Guid Id { get; private init; }
 

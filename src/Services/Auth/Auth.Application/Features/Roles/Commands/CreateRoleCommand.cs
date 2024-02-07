@@ -13,11 +13,8 @@ namespace Auth.Application.Features.Roles.Commands
 {
     public record CreateRoleCommand : IRequest<Result<CreateRoleResponse>>
     {
-        [DataType(DataType.Text)]
-        [Required]
         public string RoleName { get; set; }
 
-        [DataType(DataType.Text)]
         public string RoleDescription { get; set; }
     }
 }
