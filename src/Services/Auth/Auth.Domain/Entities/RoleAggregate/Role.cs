@@ -1,4 +1,5 @@
 ﻿using Core.SharedKernel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Auth.Domain.Entities.RoleAggregate
 {
@@ -17,6 +18,9 @@ namespace Auth.Domain.Entities.RoleAggregate
         public string RoleName { get; set; }
 
         public string RoleDescription { get; set; }
+
+        [Timestamp]
+        public byte[] Version {  get; set; }
 
         public ICollection<ClientId> ClientIds { get; set; }
     }

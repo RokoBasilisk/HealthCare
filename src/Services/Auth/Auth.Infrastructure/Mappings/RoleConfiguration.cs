@@ -27,6 +27,10 @@ namespace Auth.Infrastructure.Mappings
                 .IsRequired() // Not Null
                 .IsUnicode(false) // Varchar
                 .HasMaxLength(255);
+
+            builder
+                .Property(role => role.Version)
+                .IsRowVersion(); // Check Concurrency
         }
     }
 }
