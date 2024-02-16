@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .ConfigureAppSettings()
     .AddWriteDbContext()
-    .AddEventStoreDbContext()
+    //.AddEventStoreDbContext()
     .AddInfrastructure()
     .AddCommandHandler();
 
@@ -38,4 +38,12 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+await using var serviceScope = app.Services.CreateAsyncScope();
+
+app.Logger.LogInformation("----- Databases are being migrated....");
+await app.MigrationDbAsync(serviceScope);
+
+app.Logger.LogInformation("----- Databases have been successfully migrated!");
+app.Logger.LogInformation("----- Application is starting....");
+
+await app.RunAsync();
