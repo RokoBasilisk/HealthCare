@@ -1,4 +1,5 @@
-﻿using Core.SharedKernel;
+﻿using Auth.Domain.Entities.RoleAggregate.Events;
+using Core.SharedKernel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Auth.Domain.Entities.RoleAggregate
@@ -13,6 +14,8 @@ namespace Auth.Domain.Entities.RoleAggregate
         {
             RoleName = roleName;
             RoleDescription = roleDescription;
+
+            AddDomainEvent(new RoleCreatedEvent(Id, RoleName, RoleDescription));
         }
 
         public string RoleName { get; set; }

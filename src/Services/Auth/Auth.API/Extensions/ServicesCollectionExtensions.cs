@@ -14,6 +14,11 @@ namespace Auth.API.Extensions
         public static IServiceCollection AddWriteDbContext(this IServiceCollection services) =>
             services.AddDbContext<WriteDbContext>((serviceProvider, optionsBuilder) =>
                 ConfigureDbContext<WriteDbContext>(serviceProvider, optionsBuilder, QueryTrackingBehavior.TrackAll));
+
+        public static IServiceCollection AddEventStoreDbContext(this IServiceCollection services) =>
+            services.AddDbContext<EventStoreDbContext>((serviceProvider, optionsBuilder) =>
+                ConfigureDbContext<EventStoreDbContext>(serviceProvider, optionsBuilder, QueryTrackingBehavior.NoTrackingWithIdentityResolution));
+
         private static void ConfigureDbContext<TContext>(
             IServiceProvider serviceProvider,
             DbContextOptionsBuilder optionsBuilder,

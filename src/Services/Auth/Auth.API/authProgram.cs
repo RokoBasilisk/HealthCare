@@ -12,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .ConfigureAppSettings()
     .AddWriteDbContext()
+    .AddEventStoreDbContext()
     .AddInfrastructure()
     .AddCommandHandler();
 

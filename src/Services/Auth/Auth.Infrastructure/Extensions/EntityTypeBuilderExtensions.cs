@@ -29,6 +29,8 @@ namespace Auth.Infrastructure.Extensions
                 .ValueGeneratedNever();
 
             // Ignores the DomainEvents property for the entity.
+            builder
+                .Ignore(entity => entity.DomainEvents);
         }
     }
 }

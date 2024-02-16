@@ -13,9 +13,10 @@ namespace Auth.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services) =>
             services
-            //.AddScoped(typeof(IWriteAsyncRepository<>), typeof(BaseWriteRepository<>))
+            .AddScoped<IEventStoreRepository, EventStoreRepository>()
             .AddScoped<IRoleWriteRepository, RoleWriteRepository>()
             .AddScoped<WriteDbContext>()
+            .AddScoped<EventStoreDbContext>()
             .AddScoped<IUnitOfWork, UnitOfWork>();
     }
 }
