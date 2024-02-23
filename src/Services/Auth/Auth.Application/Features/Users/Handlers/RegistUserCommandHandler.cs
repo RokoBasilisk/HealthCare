@@ -68,7 +68,7 @@ namespace Auth.Application.Features.Users.Handlers
 
             client.clientRoles = [new ClientRole(client.Id, basicRole.Id)];
 
-            _clientWriteRepository.Add(client);
+            _clientWriteRepository.AddAsync(client);
 
             await _unitOfWork.SaveChangesAsync();
 
