@@ -11,7 +11,7 @@ namespace Auth.Infrastructure.Persistence
 {
     public class EventStoreDbContext : BaseDBContext<EventStoreDbContext>
     {
-        public EventStoreDbContext(DbContextOptions options) : base(options)
+        public EventStoreDbContext(DbContextOptions<EventStoreDbContext> options) : base(options)
         {
         }
 
@@ -19,8 +19,8 @@ namespace Auth.Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new EventStoreConfiguration());
             base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new EventStoreConfiguration());
         }
     }
 }

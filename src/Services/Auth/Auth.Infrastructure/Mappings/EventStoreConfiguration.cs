@@ -36,7 +36,7 @@ namespace Auth.Infrastructure.Mappings
                 .Property(eventStore => eventStore.Data)
                 .IsRequired()
                 .IsUnicode(false)
-                .HasColumnType("VARCHAR(MAX)")
+                .HasColumnType("VARCHAR(4096)")
                 .HasComment("JSON serialized event");
 
             builder
@@ -44,8 +44,6 @@ namespace Auth.Infrastructure.Mappings
                 .IsRequired()
                 .HasColumnName("CreatedAt");
 
-            builder
-                .HasBaseType<EventBase>();
         }
     }
 }

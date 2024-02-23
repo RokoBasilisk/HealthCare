@@ -10,10 +10,12 @@ namespace Auth.API.Extensions
         public static async Task MigrationDbAsync(this WebApplication app, AsyncServiceScope serviceScope)
         {
             await using var writeDbContext = serviceScope.ServiceProvider.GetService<WriteDbContext>();
+            await using var eventStoreDbContext = serviceScope.ServiceProvider.GetService<EventStoreDbContext>();
 
             try
             {
                 await app.MigrationDbContextAsync(writeDbContext);
+                await app.MigrationDbContextAsync(eventStoreDbContext);
             }
             catch (Exception ex)
             {

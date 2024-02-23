@@ -1,6 +1,7 @@
 ﻿using Auth.Domain.Entities.RoleAggregate;
 using Auth.Infrastructure.Persistence;
 using Auth.Infrastructure.Repositories.Common;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,9 @@ namespace Auth.Infrastructure.Repositories
         public RoleWriteRepository(WriteDbContext context) : base(context)
         {
         }
+
+        public Task<Role> GetRoleByNameAsync(string roleName)
+            => Context.Roles
+                .SingleOrDefaultAsync(role => role.RoleName == roleName);
     }
 }

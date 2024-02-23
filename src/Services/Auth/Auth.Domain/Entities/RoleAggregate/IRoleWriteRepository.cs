@@ -9,5 +9,6 @@ namespace Auth.Domain.Entities.RoleAggregate
 {
     public interface IRoleWriteRepository : IWriteAsyncRepository<Role>
     {
+        Task<Role> GetRoleByNameAsync(string roleName);
     }
 }

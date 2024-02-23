@@ -21,16 +21,16 @@ namespace Auth.Infrastructure.Repositories.Common
             _dbSet = context.Set<TEntity>();
         }
 
-        public void DeleteAsync(TEntity entity) =>
+        public void Delete(TEntity entity) =>
             _dbSet.Remove(entity);
 
         public async Task<TEntity> GetByIdAsync(Guid id)
             => await _dbSet.AsNoTrackingWithIdentityResolution().FirstOrDefaultAsync(entity => entity.Id == id);
 
-        public void UpdateAsync(TEntity entity) =>
+        public void Update(TEntity entity) =>
             _dbSet.Update(entity);
 
-        public void AddAsync(TEntity entity) =>
+        public void Add(TEntity entity) =>
             _dbSet.Add(entity);
     }
 }

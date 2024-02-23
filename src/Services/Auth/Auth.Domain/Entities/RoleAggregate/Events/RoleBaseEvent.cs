@@ -1,4 +1,5 @@
-﻿using Core.SharedKernel;
+﻿using Core.Extensions;
+using Core.SharedKernel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace Auth.Domain.Entities.RoleAggregate.Events
         protected RoleBaseEvent(Guid id, string roleName, string roleDescription)
         {
             Id = id;
+            AggregateId = id;
+            MessageType = this.GetGenericTypeName();
             RoleName = roleName;
             RoleDescription = roleDescription;
         }

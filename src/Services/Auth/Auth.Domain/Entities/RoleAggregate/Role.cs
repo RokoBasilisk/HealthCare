@@ -1,4 +1,6 @@
-﻿using Auth.Domain.Entities.RoleAggregate.Events;
+﻿using Auth.Domain.Entities.ClientAggregate;
+using Auth.Domain.Entities.EntityAggregate;
+using Auth.Domain.Entities.RoleAggregate.Events;
 using Core.SharedKernel;
 using System.ComponentModel.DataAnnotations;
 
@@ -25,6 +27,6 @@ namespace Auth.Domain.Entities.RoleAggregate
         [Timestamp]
         public byte[] Version {  get; set; }
 
-        public ICollection<ClientId> ClientIds { get; set; }
+        public ICollection<ClientRole> clientRoles { get; set; }
     }
 }

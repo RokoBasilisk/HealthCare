@@ -11,7 +11,7 @@ namespace Core.SharedKernel
     /// <summary>
     /// Represents a base event
     /// </summary>
-    public abstract class EventBase : INotification
+    public class EventBase : INotification
     {
         /// <summary>
         /// Gets the type of the message.

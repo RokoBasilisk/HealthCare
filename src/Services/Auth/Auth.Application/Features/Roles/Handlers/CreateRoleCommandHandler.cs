@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace Auth.Application.Features.Roles.Handlers
 {
-    public class CreateRoleCommandHandler(IRoleWriteRepository roleWriteRepository, IUnitOfWork unitOfWork, IValidator<CreateRoleCommand> _validator) : IRequestHandler<CreateRoleCommand, Result<CreateRoleResponse>>
+    internal class CreateRoleCommandHandler(IRoleWriteRepository roleWriteRepository, IUnitOfWork unitOfWork, IValidator<CreateRoleCommand> _validator) : IRequestHandler<CreateRoleCommand, Result<CreateRoleResponse>>
     {
         public async Task<Result<CreateRoleResponse>> Handle(CreateRoleCommand request, CancellationToken cancellationToken)
         {
@@ -30,7 +30,7 @@ namespace Auth.Application.Features.Roles.Handlers
 
             var role = RoleFactory.Create(request.RoleName, request.RoleDescription);
 
-            roleWriteRepository.AddAsync(role);
+            roleWriteRepository.Add(role);
 
             await unitOfWork.SaveChangesAsync();
 

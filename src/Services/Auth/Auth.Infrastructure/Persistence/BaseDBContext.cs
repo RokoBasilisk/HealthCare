@@ -15,14 +15,9 @@ namespace Auth.Infrastructure.Persistence
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
+        protected override void OnModelCreating(ModelBuilder modelBuilder) =>
             modelBuilder
-                //.UseCollation(Collation)
                 .RemoveCascadeDeleteConvension();
-            base.OnModelCreating(modelBuilder);
-        }
 
         public override ChangeTracker ChangeTracker
         {

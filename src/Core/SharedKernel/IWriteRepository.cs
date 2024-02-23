@@ -21,18 +21,18 @@ namespace Core.SharedKernel
         /// Create an entity to the repository
         /// </summary>
         /// <param name="entity">An entity for saved</param>
-        void AddAsync(TEntity entity);
+        void Add(TEntity entity);
 
         /// <summary>
         /// Updates an entity in the repository
         /// </summary>
         /// <param name="entity">An entity for modified</param>
-        void UpdateAsync(TEntity entity);
+        void Update(TEntity entity);
 
         /// <summary>
         /// Removes an entity from the repository
         /// </summary>
         /// <param name="entity">An entity for removed</param>
-        void DeleteAsync(TEntity entity);
+        void Delete(TEntity entity);
     }
 }
