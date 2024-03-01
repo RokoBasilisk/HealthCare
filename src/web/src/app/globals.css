@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.collapsing .row {
+  padding-top: var(--bs-card-cap-padding-y);
+  padding-bottom: var(--bs-card-cap-padding-y);
+  margin: 0;
+}
+
+.collapsing .row:not(:last-child) {
+  border-bottom: 1px solid var(--bs-card-border-color);
+}
+
+.card-footer .collapse .row {
+  visibility: hidden; /* Initial hidden state */
+  opacity: 0;
+  /* Apply padding before animation */
+  transform-origin: top;
+  padding-top: var(--bs-card-cap-padding-y);
+  padding-bottom: var(--bs-card-cap-padding-y);
+  margin: 0;
+}
+
+.card-footer .collapse .row:not(:last-child) {
+  border-bottom: 1px solid var(--bs-card-border-color);
+}
+
+.card-footer .collapse.show .row {
+  visibility: visible;
+  opacity: 1;
+}
