@@ -1,84 +1,89 @@
-using OperationService.Hubs;
-using OperationService.Models;
-using System.Net;
-using System.Net.WebSockets;
-using System.Text;
+
+using Fleck;
+using lib;
+using OperationService.Event;
+using OperationService.EventHandlers;
+using OperationService.Extensions;
+using OperationService.Service;
+using System.Reflection;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddSignalR();
-builder.WebHost.UseUrls("http://localhost:6969");
+
+var clientEventsHandlers = builder.FindAndInjectClientEventHandlers(Assembly.GetExecutingAssembly());
+
+IDictionary<string, Type> eventHandlerMap = new Dictionary<string, Type>();
+foreach (Type type in Assembly.GetExecutingAssembly().GetTypes())
+{
+    if (type is not null
+        && type.BaseType.IsGenericType
+        && type.BaseType.GetGenericTypeDefinition() == typeof(BaseSocketEventHandler<>))
+    {
+        builder.Services.AddSingleton(type);
+
+        Type typeEvent = type.BaseType.GetGenericArguments()[0];
+
+        eventHandlerMap[typeEvent.Name] = type;
+    }
+}
+
 var app = builder.Build();
-app.MapHub<GameHub>("/room");
 
-//app.UseWebSockets();
+var server = new WebSocketServer("ws://0.0.0.0:8181");
 
-//var connections = new List<WebSocket>();
+var userConnectionList = new List<IWebSocketConnection>();
 
-//var connectionDict = new Dictionary<string, SocketData>();
+await using var serviceScope = app.Services.CreateAsyncScope();
 
-//app.Map("/ws", async context =>
-//{
-//    if (context.WebSockets.IsWebSocketRequest)
-//    {
-//        var userId = context.Request.Query["userId"];
-//        var roomId = context.Request.Query["roomId"];
 
-//        using var ws = await context.WebSockets.AcceptWebSocketAsync();
-//        SocketData socketData = new SocketData(socket: ws, roomId: roomId);
-//        connectionDict.Add(userId, socketData);
-//        //connections.Add(ws);
+server.Start(ws =>
+{
+    ws.OnOpen = () =>
+    {
 
-//        await BroadCast($"user {userId} joined the room");
-//        await BroadCast($"{connections.Count} users connected");
-//        await ReceiveMessage(ws, 
-//            async (result, buffer) =>
-//            {
-//                if (result.MessageType == WebSocketMessageType.Text)
-//                {
-//                    string message = Encoding.UTF8.GetString(buffer, 0, result.Count);
-//                    await BroadCast($"{userId}: {message}");
-//                }
-//                else if (result.MessageType == WebSocketMessageType.Close  || ws.State == WebSocketState.Aborted)
-//                {
-//                    connections.Remove(ws);
-//                    await BroadCast($"user {userId} left the room");
-//                    await BroadCast($"{connections.Count} users connected");
-//                    await ws.CloseAsync(result.CloseStatus.Value, result.CloseStatusDescription, CancellationToken.None);
-//                }
-//            });
-//    }
-//    else
-//    {
-//        context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-//    }
-//});
+        ws.ConnectionInfo.Headers.TryGetValue("Id", out string? userId);
 
-//async Task BroadCast(string message)
-//{
-//    var bytes = Encoding.UTF8.GetBytes(message);
-//    foreach (var socket in connections)
-//    {
-//        if (socket.State == WebSocketState.Open)
-//        {
-//            var arraySegment = new ArraySegment<byte>(bytes, 0, bytes.Length);
-//            await socket.SendAsync(
-//                arraySegment,
-//                WebSocketMessageType.Text,
-//                true,
-//                CancellationToken.None);
-//        }
-//    }
-//}
+        if (userId is null)
+            ws.Close();
 
-//async Task ReceiveMessage(WebSocket webSocket, Action<WebSocketReceiveResult, byte[]> handleMessage)
-//{
-//    var buffer = new byte[1024 * 4];
 
-//    while (webSocket.State == WebSocketState.Open)
-//    {
-//        var result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
-//        handleMessage(result, buffer);
-//    }
-//}
+        StateService.AddConnection(ws, userId);
+        Console.WriteLine("New User connected");
+        Console.WriteLine("Current List Users: " + StateService.Connections.Count);
+    };
 
-await app.RunAsync();
+    ws.OnClose = () =>
+    {
+        StateService.Connections.Remove(ws.ConnectionInfo.Id);
+        Console.WriteLine("User disconnected");
+        Console.WriteLine("Current List Users: " + StateService.Connections.Count);
+    };
+
+    ws.OnMessage = async (message) =>
+    {
+        BaseSocketEvent baseSocketEvent = 
+            JsonSerializer.Deserialize<BaseSocketEvent>(message) ?? throw new ArgumentException(
+                "Could not deserialize into " + typeof(BaseSocketEvent).Name + " from Message Content: " + message);
+        Type eventType = Type.GetType(baseSocketEvent.EventType);
+
+        if (!eventHandlerMap.ContainsKey(baseSocketEvent.EventType))
+        {
+            var responseEvent = new ServerResponseEvent($"Invalid type of event {baseSocketEvent.EventType}");
+
+            var responseJson = JsonSerializer.Serialize(responseEvent);
+
+            ws.Send(responseJson);
+            return;
+        }
+
+        Type eventHandlerType = eventHandlerMap[baseSocketEvent.EventType];
+        
+        dynamic eventHandler = serviceScope.ServiceProvider.GetService(eventHandlerType);
+
+        await eventHandler.InvokeEventHandle(message, ws);
+
+        Console.WriteLine($"{eventHandlerType.Name} is completed");
+    };
+});
+
+app.Run();
