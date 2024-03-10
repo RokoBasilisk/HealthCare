@@ -12,5 +12,7 @@ namespace Core.AppSettings
         static string IAppOptions.ConfigSectionPath => "ConnectionStrings";
 
         public string PostgreSqlConnection { get; private init; }
+
+        public string CacheConnection { get; private init; }
     }
 }

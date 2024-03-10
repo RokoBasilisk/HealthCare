@@ -11,8 +11,8 @@ namespace OperationService.Service
 
     public static class StateService
     {
-        public static Dictionary<Guid, WsWithMetadata> Connections = new();
-        public static Dictionary<string, HashSet<Guid>> Rooms = new();
+        public static Dictionary<Guid, WsWithMetadata> Connections = [];
+        public static Dictionary<string, HashSet<Guid>> Rooms = [];
 
         public static bool AddConnection(IWebSocketConnection ws, string userId)
         {

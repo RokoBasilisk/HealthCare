@@ -2,6 +2,6 @@
 {
     public class RoomNotificationEvent : BaseSocketEvent
     {
-        public string RoomId {  get; set; }
+        public string? RoomId {  get; set; }
     }
 }

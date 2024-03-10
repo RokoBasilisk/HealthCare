@@ -12,20 +12,20 @@ using System.Threading.Tasks;
 
 namespace Auth.Application.Features.Users.Handlers
 {
-    internal class LoginCommandHandler : IRequestHandler<LoginCommand, Result<LoginResponse>>
-    {
-        private readonly IValidator<LoginCommand> _validator;
-        private readonly IClientWriteRepository<LoginCommand> _clientWriteRepository;
+    //internal class LoginCommandHandler : IRequestHandler<LoginCommand, Result<LoginResponse>>
+    //{
+    //    private readonly IValidator<LoginCommand> _validator;
+    //    private readonly IClientWriteRepository<LoginCommand> _clientWriteRepository;
 
 
-        public Task<Result<LoginResponse>> Handle(LoginCommand request, CancellationToken cancellationToken)
-        {
-            var validationResult = await _validator.ValidateAsync(request, cancellationToken);
-            if (!validationResult.IsValid)
-            {
-                return Result<RegistUserResponse>.Invalid(validationResult.AsErrors());
-            }
+    //    public Task<Result<LoginResponse>> Handle(LoginCommand request, CancellationToken cancellationToken)
+    //    {
+    //        var validationResult = await _validator.ValidateAsync(request, cancellationToken);
+    //        if (!validationResult.IsValid)
+    //        {
+    //            return Result<RegistUserResponse>.Invalid(validationResult.AsErrors());
+    //        }
 
-        }
-    }
+    //    }
+    //}
 }

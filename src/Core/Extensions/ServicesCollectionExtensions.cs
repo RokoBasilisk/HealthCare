@@ -12,7 +12,8 @@ namespace Core.Extensions
     public static class ServicesCollectionExtensions
     {
         public static IServiceCollection ConfigureAppSettings(this IServiceCollection services) =>
-            services.AddOptionsWithValidation<ConnectionOptions>();
+            services.AddOptionsWithValidation<ConnectionOptions>()
+                    .AddOptionsWithValidation<CacheOptions>();
 
         private static IServiceCollection AddOptionsWithValidation<TOption>(this IServiceCollection services)
             where TOption : class, IAppOptions

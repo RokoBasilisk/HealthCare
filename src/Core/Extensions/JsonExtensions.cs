@@ -14,6 +14,9 @@ namespace Core.Extensions
     {
         private static readonly JsonSerializerOptions JsonOptions = new JsonSerializerOptions().Configure();
 
+        public static T FromJson<T>(this string value) =>
+            value is not null ? Newtonsoft.Json.JsonConvert.DeserializeObject<T>(value) : default;
+
         public static string ToJson<T>(this T value) =>
             Newtonsoft.Json.JsonConvert.SerializeObject(value);
         //{

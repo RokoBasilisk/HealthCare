@@ -18,9 +18,9 @@ namespace OperationService.Models
 
         public int RoomCorrectAnswerCount { get; private set; } = 0;
 
-        public List<string> GroupCorrectAnswer { get; } = new List<string>();
+        public List<string> GroupCorrectAnswer { get; } = [];
 
-        public List<string> UserCorrectAnswer { get; } = new List<string>();
+        public List<string> UserCorrectAnswer { get; } = [];
 
         public void UserCorrect(string answer)
         {
